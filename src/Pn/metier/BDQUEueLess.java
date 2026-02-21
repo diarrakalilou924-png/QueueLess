@@ -14,13 +14,13 @@ public Connection seconnecter() {
 	Connection cnx=null;
 	
 	//definir les paramètres de connexion
-	String url="jdbc:mysql://localhost:3306/queueless";
-	String user="admin";
-	String pwd="12345";
+	String url="jdbc:postgresql://db.lnbfkdvmjpkxtzhizfhr.supabase.co:5432/postgres?sslmode=require";
+	String user="postgres";
+	String pwd="Ticke2026#Mali";
 	
 	//Charger le pilote de MySQL
 	try {
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("org.postgresql.Driver");
 		System.out.println("Driver Compatible !");
 	} catch (ClassNotFoundException e) {
 		System.out.println("Driver non Compatible !");
@@ -29,11 +29,11 @@ public Connection seconnecter() {
 	//Ouvrir la connexion
 	try {
 		cnx=DriverManager.getConnection(url, user, pwd);
-		if(cnx!=null) System.out.println("Connexion établie !");
-		else System.out.println("Connexion non établie !");	
+		if(cnx!=null) System.out.println("Connexion etablie avec supabases !");
+		else System.out.println("Connexion non etablie !");	
 	} 
 	catch (SQLException e) {
-		System.out.println("Connexion non établie !");	
+		System.out.println("Connexion non etablie !");	
 		e.printStackTrace();
 	}
 	return cnx;
