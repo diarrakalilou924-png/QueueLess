@@ -14,8 +14,8 @@ public Connection seconnecter() {
 	Connection cnx=null;
 	
 	//definir les paramÃ¨tres de connexion
-	String url="jdbc:postgresql://db.lnbfkdvmjpkxtzhizfhr.supabase.co:5432/postgres?sslmode=require";
-	String user="postgres";
+	String url = "jdbc:postgresql://aws-1-eu-north-1.pooler.supabase.com:6543/postgres?sslmode=require";
+	String user = "postgres.lnbfkdvmjpkxtzhizfhr";
 	String pwd="Ticke2026#Mali";
 	
 	//Charger le pilote de MySQL
@@ -28,12 +28,12 @@ public Connection seconnecter() {
 	}
 	//Ouvrir la connexion
 	try {
-		cnx=DriverManager.getConnection(url, user, pwd);
+		cnx=DriverManager.getConnection(url,user,pwd);
 		if(cnx!=null) System.out.println("Connexion etablie avec supabases !");
 		else System.out.println("Connexion non etablie !");	
 	} 
 	catch (SQLException e) {
-		System.out.println("Connexion non etablie !");	
+		System.out.println("Connexion problème  !");	
 		e.printStackTrace();
 	}
 	return cnx;
